@@ -1719,3 +1719,7 @@ const reportWebVitals = (metric: Metric) => {
 ---
 
 For additional support or questions, please refer to the main README.md or contact the development team.
+
+## CI & Badges
+
+The repository includes a GitHub Actions workflow named `CI` defined at `.github/workflows/ci.yml`. The main `README.md` contains status badges that point to this workflow (Actions), the project license, GitHub stars, and last commit. Maintain the workflow file name if you want the badges to remain accurate.

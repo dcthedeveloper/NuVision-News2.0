@@ -1,6 +1,14 @@
 # NuVision News 2.0
 
+[![CI](https://github.com/dcthedeveloper/NuVision-News2.0/actions/workflows/ci.yml/badge.svg)](https://github.com/dcthedeveloper/NuVision-News2.0/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/dcthedeveloper/NuVision-News2.0?style=social)](https://github.com/dcthedeveloper/NuVision-News2.0/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/dcthedeveloper/NuVision-News2.0/main)](https://github.com/dcthedeveloper/NuVision-News2.0/commits/main)
+
 NuVision is an intelligent news intelligence platform that aggregates reporting, surfaces multi-perspective analysis, and provides fast, explainable NLP-driven summaries and insights.
+
+Deployments
+- No hosted deployment configured in this repository. See `TECHNICAL_DOCUMENTATION.md` (Deployment & Production) for recommended deployment options (Vercel, Netlify, or Docker on a VM).
 
 This repository contains a React + TypeScript frontend (Vite) and a small Node-based inference proxy used to securely access the Hugging Face Inference API for summarization and other NLP tasks.
 
