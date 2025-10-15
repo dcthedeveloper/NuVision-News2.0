@@ -182,6 +182,9 @@ export const CleanReaderModal = ({ article, open, onOpenChange }: CleanReaderMod
                 </Button>
               </div>
             </div>
+            <div className="mt-2 text-xs text-muted-foreground bg-muted/30 border border-muted rounded p-2">
+              <strong>Disclaimer:</strong> This summary is AI-generated and may contain inaccuracies, omissions, or hallucinated details. Always verify important claims by reading the original article.
+            </div>
 
             <div className="mt-3">
               {isSummarizing ? (
