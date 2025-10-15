@@ -10,6 +10,15 @@ NuVision is an intelligent news intelligence platform that aggregates reporting,
 Deployments
 - No hosted deployment configured in this repository. See `TECHNICAL_DOCUMENTATION.md` (Deployment & Production) for recommended deployment options (Vercel, Netlify, or Docker on a VM).
 
+Demo / Proof of Concept notice
+---------------------------------
+This repository is a demo / proof-of-concept (POC) meant for local development and demonstrations. Sensitive API keys have been removed from the repository. If you previously committed keys, rotate them immediately with the provider dashboards (NewsAPI, Hugging Face) and do not re-commit keys to git.
+
+To run the demo locally:
+- Copy `.env.example` → `.env` and add `VITE_NEWSAPI_KEY` if you want live news.
+- Copy `server/.env.example` → `server/.env` and add `HF_API_KEY` (and optional `ADMIN_TOKEN`).
+
+
 This repository contains a React + TypeScript frontend (Vite) and a small Node-based inference proxy used to securely access the Hugging Face Inference API for summarization and other NLP tasks.
 
 Links

@@ -1,6 +1,6 @@
-import { pipeline } from "@huggingface/transformers";
-
-// Singleton pipelines for performance (used as fallbacks if no server)
+// We dynamically import @huggingface/transformers only when the in-browser fallback is used.
+// This avoids bundling the heavy transformers library into the main client bundle when
+// server-side inference endpoints are available.
 let sentimentPipeline: any = null;
 let summarizationPipeline: any = null;
 let nerPipeline: any = null;
@@ -23,7 +23,8 @@ export interface NEREntity {
 
 export const initializeSentimentAnalysis = async () => {
   if (!sentimentPipeline) {
-    sentimentPipeline = await pipeline(
+    const transformers = await import("@huggingface/transformers");
+    sentimentPipeline = await transformers.pipeline(
       "sentiment-analysis",
       "Xenova/distilbert-base-uncased-finetuned-sst-2-english"
     );
@@ -33,7 +34,8 @@ export const initializeSentimentAnalysis = async () => {
 
 export const initializeSummarization = async () => {
   if (!summarizationPipeline) {
-    summarizationPipeline = await pipeline(
+    const transformers = await import("@huggingface/transformers");
+    summarizationPipeline = await transformers.pipeline(
       "summarization",
       "Xenova/distilbart-cnn-6-6"
     );
@@ -43,7 +45,8 @@ export const initializeSummarization = async () => {
 
 export const initializeNER = async () => {
   if (!nerPipeline) {
-    nerPipeline = await pipeline(
+    const transformers = await import("@huggingface/transformers");
+    nerPipeline = await transformers.pipeline(
       "token-classification",
       "Xenova/bert-base-NER"
     );
@@ -53,7 +56,8 @@ export const initializeNER = async () => {
 
 export const initializeEmbeddings = async () => {
   if (!embeddingPipeline) {
-    embeddingPipeline = await pipeline(
+    const transformers = await import("@huggingface/transformers");
+    embeddingPipeline = await transformers.pipeline(
       "feature-extraction",
       "Xenova/all-MiniLM-L6-v2"
     );
@@ -63,7 +67,8 @@ export const initializeEmbeddings = async () => {
 
 export const initializeQA = async () => {
   if (!qaModel) {
-    qaModel = await pipeline(
+    const transformers = await import("@huggingface/transformers");
+    qaModel = await transformers.pipeline(
       "question-answering",
       "Xenova/distilbert-base-cased-distilled-squad"
     );

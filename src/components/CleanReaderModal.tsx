@@ -18,6 +18,7 @@ export const CleanReaderModal = ({ article, open, onOpenChange }: CleanReaderMod
   const [aiSummary, setAiSummary] = useState<string | null>(null);
   const [isSummarizing, setIsSummarizing] = useState(false);
   const [summaryError, setSummaryError] = useState<string | null>(null);
+  const [entities, setEntities] = useState<Array<{ word: string; start: number; end: number; entity: string; score?: number }>>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -47,6 +48,18 @@ export const CleanReaderModal = ({ article, open, onOpenChange }: CleanReaderMod
           setAiSummary(text);
           try { localStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), text })); } catch (e) { /* ignore */ }
         }
+        // Fetch NER entities from server (best-effort) to highlight in the reader
+        try {
+          const nerRes = await fetch('/api/ner', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: article.content.slice(0, 4000) }) });
+          if (nerRes.ok) {
+            const nerJson = await nerRes.json();
+            if (Array.isArray(nerJson) && nerJson.length > 0) {
+              setEntities(nerJson.map((e: any) => ({ word: e.word || e.entity || '', start: e.start || 0, end: e.end || 0, entity: e.entity || e.label || e.entity_group || '', score: e.score || 1 })));
+            }
+          }
+        } catch (e) {
+          // ignore ner failures and rely on regex fallback
+        }
       } catch (e: any) {
         if (!cancelled) setSummaryError("Failed to generate summary");
       } finally {
@@ -60,34 +73,57 @@ export const CleanReaderModal = ({ article, open, onOpenChange }: CleanReaderMod
 
   // Enhanced NER entity highlighting with types
   const highlightEntities = (text: string) => {
+    // If we have model-provided entities, use them for highlighting (more accurate).
+    if (entities && entities.length > 0) {
+      // Sort entities by start index
+      const sorted = [...entities].sort((a, b) => a.start - b.start);
+      const segments: Array<{ text: string; type?: string }> = [];
+      let cursor = 0;
+      for (const ent of sorted) {
+        if (ent.start > cursor) {
+          segments.push({ text: text.slice(cursor, ent.start) });
+        }
+        segments.push({ text: text.slice(ent.start, ent.end), type: ent.entity });
+        cursor = ent.end;
+      }
+      if (cursor < text.length) segments.push({ text: text.slice(cursor) });
+
+      return segments.map((segment, i) =>
+        segment.type ? (
+          <span key={i} className={`px-1.5 py-0.5 rounded font-medium cursor-pointer hover:opacity-80 transition-opacity bg-accent/10`} title={segment.type}>
+            {segment.text}
+          </span>
+        ) : (
+          segment.text
+        )
+      );
+    }
+
+    // Fallback: simple regex heuristics (less accurate)
     const entityPatterns = [
-      { type: "PERSON", regex: /\b([A-Z][a-z]+ [A-Z][a-z]+)\b/g, color: "bg-accent/20 text-accent" },
-      { type: "ORG", regex: /\b([A-Z][a-zA-Z]+ (?:Inc|Corp|LLC|Ltd|Company|Organization)\.?)\b/g, color: "bg-secondary/20 text-secondary" },
-      { type: "GPE", regex: /\b(United States|America|China|Russia|Europe|Asia|Africa)\b/g, color: "bg-success/20 text-success" },
-      { type: "MONEY", regex: /\$[\d,]+(?:\.\d{2})?(?:\s?(?:million|billion|trillion))?/g, color: "bg-warning/20 text-warning" },
-      { type: "DATE", regex: /\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}\b/g, color: "bg-primary/20 text-primary" }
+      { type: "PERSON", regex: /\b([A-Z][a-z]+ [A-Z][a-z]+)\b/g },
+      { type: "ORG", regex: /\b([A-Z][a-zA-Z]+ (?:Inc|Corp|LLC|Ltd|Company|Organization)\.?)\b/g },
+      { type: "GPE", regex: /\b(United States|America|China|Russia|Europe|Asia|Africa)\b/g },
     ];
 
-    let segments: { text: string; type?: string; color?: string }[] = [{ text }];
+    let segments: { text: string; type?: string }[] = [{ text }];
 
-    entityPatterns.forEach(({ type, regex, color }) => {
+    entityPatterns.forEach(({ type, regex }) => {
       segments = segments.flatMap(segment => {
         if (segment.type) return [segment];
-        
         const parts = segment.text.split(regex);
         const matches = segment.text.match(regex) || [];
-        
-        return parts.flatMap((part, i) => 
-          i < matches.length 
-            ? [{ text: part }, { text: matches[i], type, color }]
+        return parts.flatMap((part, i) =>
+          i < matches.length
+            ? [{ text: part }, { text: matches[i], type }]
             : [{ text: part }]
         );
       });
     });
 
-    return segments.map((segment, i) => 
+    return segments.map((segment, i) =>
       segment.type ? (
-        <span key={i} className={`${segment.color} px-1.5 py-0.5 rounded font-medium cursor-pointer hover:opacity-80 transition-opacity`} title={segment.type}>
+        <span key={i} className={`px-1.5 py-0.5 rounded font-medium cursor-pointer hover:opacity-80 transition-opacity bg-accent/10`} title={segment.type}>
           {segment.text}
         </span>
       ) : (
