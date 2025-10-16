@@ -15,6 +15,7 @@ interface HeaderProps {
   onFilterChange: (filter: string) => void;
   contextLens: ContextLens;
   onContextLensChange: (lens: ContextLens) => void;
+  onAIAvailabilityChange?: (available: boolean) => void;
 }
 
 const navItems = [
@@ -25,7 +26,7 @@ const navItems = [
   { id: "trending", label: "Trending", icon: TrendingUp, route: "/" },
 ];
 
-export const Header = ({ searchQuery, onSearchChange, isConversational, onToggleMode, activeFilter, onFilterChange, contextLens, onContextLensChange }: HeaderProps) => {
+export const Header = ({ searchQuery, onSearchChange, isConversational, onToggleMode, activeFilter, onFilterChange, contextLens, onContextLensChange, onAIAvailabilityChange }: HeaderProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [serverAIAvailable, setServerAIAvailable] = useState<boolean | null>(null);
@@ -50,19 +51,25 @@ export const Header = ({ searchQuery, onSearchChange, isConversational, onToggle
         if (!mounted) return;
         if (!res.ok) {
           setServerAIAvailable(false);
+          if (onAIAvailabilityChange) onAIAvailabilityChange(false);
           return;
         }
         const j = await res.json();
-        setServerAIAvailable(!!j.ok);
+        const available = !!j.ok;
+        setServerAIAvailable(available);
+        if (onAIAvailabilityChange) onAIAvailabilityChange(available);
         if (j.timestamp) setLastHealthTs(j.timestamp);
       } catch (e) {
-        if (mounted) setServerAIAvailable(false);
+        if (mounted) {
+          setServerAIAvailable(false);
+          if (onAIAvailabilityChange) onAIAvailabilityChange(false);
+        }
       }
     };
     check();
     const id = setInterval(check, 15_000);
     return () => { mounted = false; clearInterval(id); };
-  }, []);
+  }, [onAIAvailabilityChange]);
 
   const handleNavClick = (item: typeof navItems[0]) => {
     if (item.route === "/") {

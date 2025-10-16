@@ -29,6 +29,7 @@ const HomePage = () => {
   const [isClusteringInProgress, setIsClusteringInProgress] = useState(false);
   const [selectedCluster, setSelectedCluster] = useState<Article[]>([]);
   const [clusterModalOpen, setClusterModalOpen] = useState(false);
+  const [isAIAvailable, setIsAIAvailable] = useState(false);
   
   const navigate = useNavigate();
   const staticArticles = useMemo(() => loadArticles(), []);
@@ -188,6 +189,7 @@ const HomePage = () => {
         onFilterChange={setActiveFilter}
         contextLens={contextLens}
         onContextLensChange={setContextLens}
+        onAIAvailabilityChange={setIsAIAvailable}
       />
 
       <main className="container px-4 md:px-8 py-8">
@@ -269,8 +271,9 @@ const HomePage = () => {
                   variant={enableClustering ? "default" : "outline"}
                   size="lg"
                   onClick={handleToggleClustering}
-                  disabled={isClusteringInProgress}
+                  disabled={isClusteringInProgress || !isAIAvailable}
                   className="gap-2"
+                  title={!isAIAvailable ? "AI server required for clustering. Start the inference server to enable." : ""}
                 >
                   {isClusteringInProgress ? (
                     <Loader2 className="h-5 w-5 animate-spin" />
