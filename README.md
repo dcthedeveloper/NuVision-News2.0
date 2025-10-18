@@ -1,4 +1,4 @@
-# NuVision News 2.0
+# NuVision News
 ## NewsBot Intelligence System - Advanced NLP Integration Platform
 
 [![CI](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml/badge.svg)](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml)
@@ -9,7 +9,7 @@
 **ITAI 2373 Final Project**  
 **Developer:** DeMarcus Crump  
 **Course:** Natural Language Processing  
-**Institution:** Houston Community College  
+**Institution:** Houston City College  
 **Date:** October 2025
 
 ---
