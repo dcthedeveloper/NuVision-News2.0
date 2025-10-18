@@ -2,10 +2,11 @@ import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { ArticleCard } from "@/components/ArticleCard";
-import { ConversationalQuery } from "@/components/ConversationalQuery";
-import { CleanReaderModal } from "@/components/CleanReaderModal";
-import { ClusterModal } from "@/components/ClusterModal";
-import { DailyBriefScore } from "@/components/DailyBriefScore";
+import { lazy, Suspense } from "react";
+const ConversationalQuery = lazy(() => import("@/components/ConversationalQuery").then(m => ({ default: m.ConversationalQuery })));
+const CleanReaderModal = lazy(() => import("@/components/CleanReaderModal").then(m => ({ default: m.CleanReaderModal })));
+const ClusterModal = lazy(() => import("@/components/ClusterModal").then(m => ({ default: m.ClusterModal })));
+const DailyBriefScore = lazy(() => import("@/components/DailyBriefScore").then(m => ({ default: m.DailyBriefScore })));
 import { loadArticles, Article, ContextLens } from "@/lib/articles";
 import { fetchLiveNewsCached, validateNewsApiKey } from "@/lib/newsApi";
 import { clusterArticles, ClusteredArticle } from "@/lib/clustering";
@@ -194,11 +195,13 @@ const HomePage = () => {
 
       <main className="container px-4 md:px-8 py-8">
         {isConversational && searchQuery ? (
-          <ConversationalQuery 
-            query={searchQuery} 
-            onCitationClick={handleCitationClick}
-            articles={articles}
-          />
+          <Suspense fallback={<div className="py-12 text-center">Loading assistant…</div>}>
+            <ConversationalQuery 
+              query={searchQuery} 
+              onCitationClick={handleCitationClick}
+              articles={articles}
+            />
+          </Suspense>
         ) : (
           <>
             <div className="mb-8 animate-fade-in flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -286,11 +289,13 @@ const HomePage = () => {
             </div>
 
             {activeFilter === "brief" && (
-              <DailyBriefScore
-                noveltyScore={72}
-                diversityScore={85}
-                totalArticles={filteredArticles.length}
-              />
+              <Suspense fallback={null}>
+                <DailyBriefScore
+                  noveltyScore={72}
+                  diversityScore={85}
+                  totalArticles={filteredArticles.length}
+                />
+              </Suspense>
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -321,21 +326,25 @@ const HomePage = () => {
         )}
       </main>
 
-      <CleanReaderModal
-        article={selectedArticle}
-        open={readerOpen}
-        onOpenChange={setReaderOpen}
-      />
-      
-      <ClusterModal
-        articles={selectedCluster}
-        open={clusterModalOpen}
-        onOpenChange={setClusterModalOpen}
-        onArticleSelect={(article) => {
-          setSelectedArticle(article);
-          setReaderOpen(true);
-        }}
-      />
+      <Suspense fallback={null}>
+        <CleanReaderModal
+          article={selectedArticle}
+          open={readerOpen}
+          onOpenChange={setReaderOpen}
+        />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <ClusterModal
+          articles={selectedCluster}
+          open={clusterModalOpen}
+          onOpenChange={setClusterModalOpen}
+          onArticleSelect={(article) => {
+            setSelectedArticle(article);
+            setReaderOpen(true);
+          }}
+        />
+      </Suspense>
     </div>
   );
 };

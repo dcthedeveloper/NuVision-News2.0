@@ -2,10 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getArticleById } from "@/lib/articles";
-import { BiasRadar } from "@/components/deep-dive/BiasRadar";
-import { EventTimeline } from "@/components/deep-dive/EventTimeline";
-import { KnowledgeMap } from "@/components/deep-dive/KnowledgeMap";
-import { DeepVisionMode } from "@/components/deep-dive/DeepVisionMode";
+import { lazy, Suspense } from "react";
+
+const BiasRadar = lazy(() => import("@/components/deep-dive/BiasRadar").then((m) => ({ default: m.BiasRadar })));
+const EventTimeline = lazy(() => import("@/components/deep-dive/EventTimeline").then((m) => ({ default: m.EventTimeline })));
+const KnowledgeMap = lazy(() => import("@/components/deep-dive/KnowledgeMap").then((m) => ({ default: m.KnowledgeMap })));
+const DeepVisionMode = lazy(() => import("@/components/deep-dive/DeepVisionMode").then((m) => ({ default: m.DeepVisionMode })));
 
 const DeepDivePage = () => {
   const { id } = useParams();
@@ -38,10 +40,12 @@ const DeepDivePage = () => {
         </Link>
       </div>
 
-      {article.deep_dive_format === "Bias Radar" && <BiasRadar article={article} />}
-      {article.deep_dive_format === "Event Timeline" && <EventTimeline article={article} />}
-      {article.deep_dive_format === "Knowledge Map" && <KnowledgeMap article={article} />}
-      {article.deep_dive_format === "Deep Vision" && <DeepVisionMode article={article} />}
+      <Suspense fallback={<div className="p-8 text-center">Loading experience…</div>}>
+        {article.deep_dive_format === "Bias Radar" && <BiasRadar article={article} />}
+        {article.deep_dive_format === "Event Timeline" && <EventTimeline article={article} />}        
+        {article.deep_dive_format === "Knowledge Map" && <KnowledgeMap article={article} />}
+        {article.deep_dive_format === "Deep Vision" && <DeepVisionMode article={article} />}
+      </Suspense>
     </div>
   );
 };
