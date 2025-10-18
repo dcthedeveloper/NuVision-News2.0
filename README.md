@@ -62,7 +62,7 @@ API keys rotate / security reminder
 This repository contains a React + TypeScript frontend (Vite) and a small Node-based inference proxy used to securely access the Hugging Face Inference API for summarization and other NLP tasks.
 
 Links
-- Live code: https://github.com/dcthedeveloper/NuVision-News2.0
+- Repository: https://github.com/dcthedeveloper/NuVision-News2.0
 - Technical documentation: ./TECHNICAL_DOCUMENTATION.md
 
 Quick status
@@ -109,4 +109,3 @@ See `CONTRIBUTING.md` for contribution guidelines.
 
 License
 This project is licensed under the MIT License — see `LICENSE`.
-# NuVision-News2.0
