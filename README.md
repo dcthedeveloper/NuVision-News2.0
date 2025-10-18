@@ -8,11 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/deewcee/NuVision-News?style=social)](https://github.com/deewcee/NuVision-News/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/deewcee/NuVision-News/main)](https://github.com/deewcee/NuVision-News/commits/main)
 
-**ITAI 2373 Final Project**  
-**Developer:** DeMarcus Crump  
-**Course:** Natural Language Processing  
-**Institution:** Houston City College  
-**Date:** October 2025
+**Developer:** DeMarcus Crump | **Repository:** [github.com/deewcee/NuVision-News](https://github.com/deewcee/NuVision-News)
 
 ---
 
@@ -37,10 +33,9 @@
 
 ---
 
-## Demo / Proof of Concept Notice
-## Demo / Proof of Concept Notice
+## Demo Application Notice
 
-This repository is a **demo/proof-of-concept** for local development and demonstrations. API keys have been removed from version control for security.
+This is a **demonstration application** showcasing NLP techniques applied to news analysis. API keys are not included in the repository for security.
 
 ### What Works Without Any API Keys
 
@@ -66,8 +61,8 @@ The app is **fully functional as a demo** using pre-loaded sample data (`src/dat
 
 ```bash
 # Clone and install
-git clone https://github.com/dcthedeveloper/NuVision-News2.0.git
-cd NuVision-News2.0
+git clone https://github.com/deewcee/NuVision-News.git
+cd NuVision-News
 npm install
 
 # Start the demo (no APIs needed)
@@ -161,50 +156,22 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 ---
 
-## Individual Contributions
+## Technical Implementation
 
-**Developer:** DeMarcus Crump
-
-**Modules Implemented:**
-- ✅ Module A: Advanced Content Analysis Engine (Classification, Topic Modeling, Sentiment, NER)
-- ✅ Module B: Language Understanding & Generation (Summarization, Embeddings, QA)
-- ✅ Module C: Multilingual Intelligence (Translation, Language Detection)
-- ✅ Module D: Conversational Interface (Natural Language Queries, Intent Classification)
-
-**Technical Implementation:**
-- Frontend architecture (React + TypeScript + Vite)
-- Backend inference proxy (Node.js + Express)
-- NLP algorithms (TF-IDF, clustering, sentiment analysis, entity extraction)
-- AI integration (Hugging Face Transformers)
-- Caching & performance optimization
-- UI/UX design and implementation
+**Core Features:**
+- Frontend: React 18 + TypeScript + Vite
+- Backend: Node.js + Express inference proxy
+- NLP: TF-IDF, clustering, sentiment analysis, entity extraction
+- AI: Hugging Face Transformers (BART, BERT, sentence-transformers)
+- Performance: Client-side caching, dynamic imports, optimized bundling
+- UI/UX: Modern component-based design with shadcn/ui
 
 **Documentation:**
-- README.md (project overview and setup)
-- TECHNICAL_DOCUMENTATION.md (1700+ lines of technical detail)
-- EXECUTIVE_SUMMARY.md (business-focused overview)
-- USER_GUIDE.md (end-user instructions)
-- API_REFERENCE.md (complete API documentation)
-
----
-
-## Academic Project Information
-
-**Course:** ITAI 2373 - Natural Language Processing  
-**Project Type:** Final Project - NewsBot Intelligence System 2.0  
-**Learning Objectives Demonstrated:**
-- Advanced topic modeling (LDA/NMF)
-- Language model integration (BART, BERT, transformers)
-- Multilingual NLP capabilities
-- Conversational AI interfaces
-- Production-ready system architecture
-
-**Assignment Requirements Met:**
-- ✅ Enhanced GitHub repository with professional structure
-- ✅ Advanced analysis implementation (topic modeling, LLMs, multilingual, conversational)
-- ✅ Comprehensive documentation (technical, user, business)
-- ✅ Working demo with 2000+ sample articles
-- ✅ Optional API integrations (NewsAPI, Hugging Face)
+- README.md - Project overview and setup
+- TECHNICAL_DOCUMENTATION.md - Detailed technical reference
+- EXECUTIVE_SUMMARY.md - Business overview
+- USER_GUIDE.md - End-user instructions
+- API_REFERENCE.md - Complete API documentation
 
 ---
 
@@ -212,8 +179,7 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 **Developer:** DeMarcus Crump  
 **GitHub:** https://github.com/deewcee  
-**Project Repository:** https://github.com/deewcee/NuVision-News  
-**Issues:** https://github.com/deewcee/NuVision-News/issues
+**Repository:** https://github.com/deewcee/NuVision-News  
+**Issues/Feedback:** https://github.com/deewcee/NuVision-News/issues
 
-**For Academic Review:**
-This project demonstrates comprehensive mastery of NLP techniques including text preprocessing, feature extraction, classification, sentiment analysis, named entity recognition, topic modeling, language models, and conversational AI—all integrated into a production-ready web application.
+This project demonstrates practical NLP techniques including text preprocessing, feature extraction, classification, sentiment analysis, named entity recognition, topic modeling, and language model integration—all applied to real-world news analysis.

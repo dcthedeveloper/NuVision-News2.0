@@ -417,7 +417,7 @@ A: Yes, use the export buttons in Deep Dive and Bias Radar pages to generate PDF
 A: Currently English. Multilingual features are in development.
 
 **Q: How do I report incorrect classifications?**
-A: GitHub issues: https://github.com/dcthedeveloper/NuVision-News2.0/issues
+A: GitHub issues: https://github.com/deewcee/NuVision-News/issues
 
 **Q: Can I customize the interface?**
 A: Yes, visit Settings to customize colors, fonts, and layout preferences.

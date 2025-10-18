@@ -10,7 +10,7 @@
 
 ## Executive Overview
 
-**NuVision News** is a comprehensive, production-ready news intelligence platform that demonstrates mastery of advanced Natural Language Processing (NLP) techniques. Building upon foundational news analysis concepts, this system integrates cutting-edge machine learning, semantic analysis, and conversational AI to transform how users consume and understand news content.
+**NuVision News** is a news intelligence platform that demonstrates advanced Natural Language Processing (NLP) techniques. This system integrates machine learning, semantic analysis, and AI-powered features to help users better understand news content through clustering, entity extraction, sentiment analysis, and automated summaries.
 
 ### The Problem
 
@@ -353,25 +353,25 @@ Efficient implementation handles 2000+ articles with sub-second clustering using
 
 ## Conclusion
 
-NuVision News demonstrates comprehensive mastery of advanced NLP techniques while delivering real business value. The system successfully integrates topic modeling, language models, sentiment analysis, entity recognition, and conversational AI into a cohesive, production-ready platform.
+NuVision News demonstrates advanced NLP techniques applied to real-world news analysis. The system successfully integrates topic modeling, language models, sentiment analysis, entity recognition, and conversational AI features.
 
 **Key Achievements:**
 - ✅ Fully functional demo with 2000+ sample articles (no API dependencies)
 - ✅ Optional live news integration (NewsAPI)
 - ✅ Optional AI features (Hugging Face)
-- ✅ Professional-grade code quality and documentation
-- ✅ Scalable architecture suitable for production deployment
-- ✅ Novel contributions (Context Lenses, integrated bias analysis)
+- ✅ Clean, well-documented codebase
+- ✅ Modular architecture for easy extension
+- ✅ Practical features (Context Lenses, bias visualization, clustering)
 
 **Skills Demonstrated:**
 - End-to-end NLP pipeline development
-- Advanced algorithm implementation (LDA, transformers, embeddings)
-- System architecture and design patterns
-- Performance optimization and scalability
-- Professional documentation and communication
-- Ethical AI considerations
+- Modern web application architecture (React + TypeScript)
+- API integration and caching strategies
+- Performance optimization for client-side NLP
+- Professional documentation and code organization
+- Practical AI/ML implementation
 
-This project represents not just an academic exercise, but a portfolio-ready demonstration of professional NLP engineering capabilities. The system is production-ready and could be deployed commercially with minimal additional work.
+This project serves as a demonstration of applied NLP engineering with a focus on usability and real-world applicability.
 
 ---
 
@@ -392,7 +392,7 @@ This project represents not just an academic exercise, but a portfolio-ready dem
 - Hugging Face Inference API: https://huggingface.co/inference-api
 
 **Code Repository:**
-- GitHub: https://github.com/dcthedeveloper/NuVision-News2.0
+- GitHub: https://github.com/deewcee/NuVision-News
 
 ---
 
