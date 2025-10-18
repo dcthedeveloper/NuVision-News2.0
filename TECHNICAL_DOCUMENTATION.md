@@ -1,5 +1,60 @@
 # NuVision News - Technical Documentation
 
+---
+
+## Executive Summary
+
+**NuVision News** is a modern news aggregation platform with advanced NLP and AI features, built as a React + TypeScript demo application. This document provides comprehensive technical reference for developers, architects, and contributors.
+
+### Quick Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui, Radix UI |
+| **Server** | Node.js + Express (inference proxy) |
+| **NLP/AI** | Hugging Face Transformers (server-first), browser fallback |
+| **APIs** | NewsAPI (live news), Hugging Face Inference API (AI) |
+| **Caching** | localStorage (client), file-backed JSON (server, 7-day TTL) |
+| **Build** | Vite (ESM, ~2.5s builds), TypeScript strict mode |
+| **Testing** | GitHub Actions CI (lint, typecheck, build) |
+
+### Architecture Decision Guide
+
+**When to use what:**
+
+- **Static article analysis** (no APIs): Browse 2000+ sample articles, full NLP features work client-side
+- **Live news** (NewsAPI required): Real-time headlines from 50+ sources
+- **AI features** (HF API required): Semantic clustering, advanced summaries, entity extraction
+- **Server-side processing**: Offloads heavy computation (embeddings, transformers), caching reduces API calls
+- **Client-side fallback**: Regex-based NER, sentiment analysis work without server
+
+**Key design decisions:**
+1. **Dynamic imports** for transformers library (prevents 200MB+ bundle bloat)
+2. **Server-first architecture** (reduces client bundle, enables caching, protects API keys)
+3. **Graceful degradation** (features disable when APIs unavailable, not crash)
+4. **File-backed cache** (survives server restarts, 7-day TTL balances freshness vs. cost)
+5. **CORS restricted** to localhost (demo security)
+
+### Quick Reference
+
+| Task | Section | Page |
+|------|---------|------|
+| Understand data flow | [Data Flow](#data-flow) | Below |
+| Add new NLP feature | [Extension Points](#extension-points) | Mid-doc |
+| Optimize performance | [Performance Considerations](#performance-considerations) | Mid-doc |
+| Deploy to production | [Deployment & Production](#deployment--production) | End |
+| API endpoints | [API Reference](#api-reference) | Mid-doc |
+| Algorithm details | [Key Algorithms](#key-algorithms) | Mid-doc |
+
+### Document Navigation
+
+- **First-time readers**: Start with [Architecture Overview](#architecture-overview) → [Data Flow](#data-flow)
+- **Contributing developers**: Jump to [Development Guidelines](#development-guidelines) → [Extension Points](#extension-points)
+- **DevOps/deployment**: See [Deployment & Production](#deployment--production) at end
+- **Algorithm researchers**: See [Key Algorithms](#key-algorithms) for TF-IDF, clustering, bias analysis details
+
+---
+
 ## Table of Contents
 1. [Architecture Overview](#architecture-overview)
 2. [Core Modules](#core-modules)
