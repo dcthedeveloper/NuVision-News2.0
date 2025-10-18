@@ -1,4 +1,4 @@
-# NuVision News 2.0 - User Guide
+# NuVision News - User Guide
 **Complete Guide for End Users**
 
 ---
@@ -435,7 +435,7 @@ A: Yes, this is an open-source academic project. Free for personal and education
 - Search existing GitHub issues
 
 **Found a Bug?**
-- Report on GitHub: https://github.com/dcthedeveloper/NuVision-News2.0/issues
+- Report on GitHub: https://github.com/deewcee/NuVision-News/issues
 - Include: Browser, OS, steps to reproduce, error messages
 
 **Feature Requests:**
@@ -445,7 +445,7 @@ A: Yes, this is an open-source academic project. Free for personal and education
 **Contact:**
 - Developer: DeMarcus Crump
 - Email: [Your Email]
-- GitHub: https://github.com/dcthedeveloper
+- GitHub: https://github.com/deewcee
 
 ---
 

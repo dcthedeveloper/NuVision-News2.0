@@ -1,4 +1,4 @@
-# NuVision News 2.0
+# NuVision News
 ## NewsBot Intelligence System - Advanced NLP Integration Platform
 
 [![CI](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml/badge.svg)](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml)
@@ -9,7 +9,7 @@
 **ITAI 2373 Final Project**  
 **Developer:** DeMarcus Crump  
 **Course:** Natural Language Processing  
-**Institution:** Houston Community College  
+**Institution:** Houston City College  
 **Date:** October 2025
 
 ---
@@ -161,7 +161,7 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 ## Individual Contributions
 
-**Developer:** DeMarcus Crump (Solo Project)
+**Developer:** DeMarcus Crump
 
 **Modules Implemented:**
 - ✅ Module A: Advanced Content Analysis Engine (Classification, Topic Modeling, Sentiment, NER)
@@ -209,9 +209,9 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 ## Contact & Support
 
 **Developer:** DeMarcus Crump  
-**GitHub:** https://github.com/dcthedeveloper  
-**Project Repository:** https://github.com/dcthedeveloper/NuVision-News2.0  
-**Issues:** https://github.com/dcthedeveloper/NuVision-News2.0/issues
+**GitHub:** https://github.com/deewcee  
+**Project Repository:** https://github.com/deewcee/NuVision-News  
+**Issues:** https://github.com/deewcee/NuVision-News/issues
 
 **For Academic Review:**
 This project demonstrates comprehensive mastery of NLP techniques including text preprocessing, feature extraction, classification, sentiment analysis, named entity recognition, topic modeling, language models, and conversational AI—all integrated into a production-ready web application.

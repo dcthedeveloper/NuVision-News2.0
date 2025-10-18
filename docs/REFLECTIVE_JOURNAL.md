@@ -1,4 +1,4 @@
-# NuVision News 2.0 - Reflective Journal
+# NuVision News - Reflective Journal
 **ITAI 2373 Final Project**
 
 **Developer:** DeMarcus Crump  
@@ -9,11 +9,11 @@
 
 ## Project Overview
 
-This reflective journal documents the development journey of NuVision News 2.0, a comprehensive news intelligence platform demonstrating advanced NLP techniques. As a solo project, this reflects my personal learning, challenges, and growth throughout the final project development.
+This reflective journal documents the development journey of NuVision News, a comprehensive news intelligence platform demonstrating advanced NLP techniques. This reflects my personal learning, challenges, and growth throughout the final project development.
 
 ---
 
-## Individual Contributions
+### Individual Contributions (100%)
 
 As the sole developer of this project, I was responsible for all aspects of design, implementation, and documentation:
 
@@ -456,7 +456,7 @@ This final project represents the culmination of my NLP learning journey. Beyond
 3. **Real-World Constraints Drive Innovation**  
    API rate limits, bundle sizes, and performance requirements forced creative solutions (caching, dynamic imports, graceful degradation) that made the system better.
 
-4. **Solo Projects Build Complete Skillsets**  
+4. **Complete Skillset Development**  
    Being responsible for every aspect—frontend, backend, algorithms, documentation, deployment—developed well-rounded engineering capabilities beyond just NLP.
 
 **Personal Growth:**
@@ -537,4 +537,4 @@ I'm proud of what I've built and excited to leverage these skills in my career i
 
 ---
 
-*This reflective journal documents my solo development journey for the ITAI 2373 Final Project: NuVision News 2.0 - NewsBot Intelligence System.*
+*This reflective journal documents the development journey for the ITAI 2373 Final Project: NuVision News - NewsBot Intelligence System.*

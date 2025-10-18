@@ -1,5 +1,5 @@
-# NuVision News 2.0 - Executive Summary
-**ITAI 2373 Final Project: NewsBot Intelligence System 2.0**
+# NuVision News - Executive Summary
+**ITAI 2373 Final Project: NewsBot Intelligence System**
 
 **Developer:** DeMarcus Crump  
 **Course:** ITAI 2373 - Natural Language Processing  
@@ -10,7 +10,7 @@
 
 ## Executive Overview
 
-**NuVision News 2.0** is a comprehensive, production-ready news intelligence platform that demonstrates mastery of advanced Natural Language Processing (NLP) techniques. Building upon foundational news analysis concepts, this system integrates cutting-edge machine learning, semantic analysis, and conversational AI to transform how users consume and understand news content.
+**NuVision News** is a comprehensive, production-ready news intelligence platform that demonstrates mastery of advanced Natural Language Processing (NLP) techniques. Building upon foundational news analysis concepts, this system integrates cutting-edge machine learning, semantic analysis, and conversational AI to transform how users consume and understand news content.
 
 ### The Problem
 
@@ -24,7 +24,7 @@ Traditional news aggregators simply collect and display articles chronologically
 
 ### The Solution
 
-NuVision News 2.0 leverages advanced NLP and AI to provide:
+NuVision News leverages advanced NLP and AI to provide:
 
 - **Semantic Clustering**: Automatically groups related stories from multiple sources using embeddings and cosine similarity
 - **AI-Powered Summaries**: Generates concise, accurate summaries using Hugging Face transformer models
@@ -353,7 +353,7 @@ Efficient implementation handles 2000+ articles with sub-second clustering using
 
 ## Conclusion
 
-NuVision News 2.0 demonstrates comprehensive mastery of advanced NLP techniques while delivering real business value. The system successfully integrates topic modeling, language models, sentiment analysis, entity recognition, and conversational AI into a cohesive, production-ready platform.
+NuVision News demonstrates comprehensive mastery of advanced NLP techniques while delivering real business value. The system successfully integrates topic modeling, language models, sentiment analysis, entity recognition, and conversational AI into a cohesive, production-ready platform.
 
 **Key Achievements:**
 - ✅ Fully functional demo with 2000+ sample articles (no API dependencies)
@@ -398,10 +398,10 @@ This project represents not just an academic exercise, but a portfolio-ready dem
 
 **Developer:** DeMarcus Crump  
 **Email:** [Your Email]  
-**GitHub:** https://github.com/dcthedeveloper  
-**Project Repository:** https://github.com/dcthedeveloper/NuVision-News2.0  
+**GitHub:** https://github.com/deewcee  
+**Project Repository:** https://github.com/deewcee/NuVision-News  
 **Live Demo:** http://localhost:8080 (development)
 
 ---
 
-*This document serves as the Executive Summary for the ITAI 2373 Final Project: NewsBot Intelligence System 2.0*
+*This document serves as the Executive Summary for the ITAI 2373 Final Project: NewsBot Intelligence System*

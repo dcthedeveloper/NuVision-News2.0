@@ -1,6 +1,6 @@
 # Repository Cleanup & Academic Alignment - Summary
 **Date:** October 18, 2025  
-**Project:** NuVision News 2.0 - ITAI 2373 Final Project
+**Project:** NuVision News - ITAI 2373 Final Project
 
 ---
 
