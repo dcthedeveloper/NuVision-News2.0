@@ -1,12 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { getSentimentColor, getSentimentLabel } from "@/lib/articles";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
 interface SentimentBadgeProps {
   compound: number;
 }
 
-export const SentimentBadge = ({ compound }: SentimentBadgeProps) => {
+export const SentimentBadge = memo(({ compound }: SentimentBadgeProps) => {
   const color = getSentimentColor(compound);
   const label = getSentimentLabel(compound);
 
@@ -23,4 +24,4 @@ export const SentimentBadge = ({ compound }: SentimentBadgeProps) => {
       {label}
     </Badge>
   );
-};
+});

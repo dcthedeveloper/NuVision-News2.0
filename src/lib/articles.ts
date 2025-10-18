@@ -1,4 +1,23 @@
-import articlesData from "@/data/nuvision_2k.json";
+// Lazy load articles data to reduce initial bundle size
+let articlesDataCache: Omit<Article, "deep_dive_format">[] | null = null;
+
+const loadArticlesData = async (): Promise<Omit<Article, "deep_dive_format">[]> => {
+  if (articlesDataCache) {
+    return articlesDataCache;
+  }
+  
+  try {
+    const response = await fetch('/nuvision_2k.json');
+    if (!response.ok) {
+      throw new Error('Failed to load articles data');
+    }
+    articlesDataCache = await response.json();
+    return articlesDataCache;
+  } catch (error) {
+    console.error('Error loading articles:', error);
+    return [];
+  }
+};
 
 export interface Article {
   id: number;
@@ -130,16 +149,17 @@ const generateMetadata = (article: Omit<Article, "deep_dive_format">, index: num
   };
 };
 
-export const loadArticles = (): Article[] => {
-  return (articlesData as Omit<Article, "deep_dive_format">[]).map((article, index) => ({
+export const loadArticles = async (): Promise<Article[]> => {
+  const articlesData = await loadArticlesData();
+  return articlesData.map((article, index) => ({
     ...article,
     deep_dive_format: assignDeepDiveFormat(article.category),
     ...generateMetadata(article, index)
   }));
 };
 
-export const getArticleById = (id: number): Article | undefined => {
-  const articles = loadArticles();
+export const getArticleById = async (id: number): Promise<Article | undefined> => {
+  const articles = await loadArticles();
   return articles.find((article) => article.id === id);
 };
 

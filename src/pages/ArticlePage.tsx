@@ -1,14 +1,34 @@
 import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { ArrowLeft, Building2, User, Calendar, MapPin, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getArticleById } from "@/lib/articles";
+import { getArticleById, Article } from "@/lib/articles";
 import { CategoryTag } from "@/components/CategoryTag";
 import { SentimentBadge } from "@/components/SentimentBadge";
 
 const ArticlePage = () => {
   const { id } = useParams();
-  const article = getArticleById(Number(id));
+  const [article, setArticle] = useState<Article | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      setIsLoading(true);
+      const loadedArticle = await getArticleById(Number(id));
+      setArticle(loadedArticle || null);
+      setIsLoading(false);
+    };
+    loadArticle();
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   if (!article) {
     return (

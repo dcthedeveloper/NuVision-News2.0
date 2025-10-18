@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getArticleById } from "@/lib/articles";
+import { getArticleById, Article } from "@/lib/articles";
 import { BiasRadar } from "@/components/deep-dive/BiasRadar";
 import { EventTimeline } from "@/components/deep-dive/EventTimeline";
 import { KnowledgeMap } from "@/components/deep-dive/KnowledgeMap";
@@ -9,7 +10,26 @@ import { DeepVisionMode } from "@/components/deep-dive/DeepVisionMode";
 
 const DeepDivePage = () => {
   const { id } = useParams();
-  const article = getArticleById(Number(id));
+  const [article, setArticle] = useState<Article | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      setIsLoading(true);
+      const loadedArticle = await getArticleById(Number(id));
+      setArticle(loadedArticle || null);
+      setIsLoading(false);
+    };
+    loadArticle();
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   if (!article || !article.deep_dive_format) {
     return (

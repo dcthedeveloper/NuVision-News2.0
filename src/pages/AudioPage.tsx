@@ -1,19 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { loadArticles } from "@/lib/articles";
+import { loadArticles, Article } from "@/lib/articles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AudioPage = () => {
-  const articles = loadArticles().slice(0, 10); // Top 10 articles
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
   const selectedArticle = articles.find(a => a.id === selectedArticleId);
+
+  useEffect(() => {
+    const loadAllArticles = async () => {
+      setIsLoading(true);
+      const loadedArticles = await loadArticles();
+      setArticles(loadedArticles.slice(0, 10));
+      setIsLoading(false);
+    };
+    loadAllArticles();
+  }, []);
 
   const briefingText = articles
     .map((article, index) => `Article ${index + 1}. ${article.content.substring(0, 300)}`)
     .join(". ");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-32">
