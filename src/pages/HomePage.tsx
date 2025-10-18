@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { ArticleCard } from "@/components/ArticleCard";
@@ -32,7 +32,9 @@ const HomePage = () => {
   const [isAIAvailable, setIsAIAvailable] = useState(false);
   
   const navigate = useNavigate();
-  const staticArticles = useMemo(() => loadArticles(), []);
+  const [staticArticles, setStaticArticles] = useState<Article[]>([]);
+  const [isLoadingStaticArticles, setIsLoadingStaticArticles] = useState(true);
+  
   // Read NewsAPI key presence for UI disabling
   const hasNewsApiKey = (import.meta as any).env?.VITE_NEWSAPI_KEY;
   const articles = enableClustering && clusteredArticles.length > 0 
@@ -75,6 +77,27 @@ const HomePage = () => {
       setNewsApiKeyValid(valid);
     };
     checkKey();
+  }, []);
+
+  useEffect(() => {
+    // Load static articles on mount
+    const loadStaticArticles = async () => {
+      setIsLoadingStaticArticles(true);
+      try {
+        const articles = await loadArticles();
+        setStaticArticles(articles);
+      } catch (error) {
+        console.error('Failed to load articles:', error);
+        toast({
+          title: "Failed to load articles",
+          description: "Please refresh the page",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoadingStaticArticles(false);
+      }
+    };
+    loadStaticArticles();
   }, []);
 
   useEffect(() => {

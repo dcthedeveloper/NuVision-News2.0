@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { loadArticles } from "@/lib/articles";
+import { loadArticles, Article } from "@/lib/articles";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const TopicsPage = () => {
-  const articles = loadArticles();
-  const categories = Array.from(new Set(articles.map(a => a.category)));
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const categories = Array.from(new Set(articles.map(a => a.category)));
+
+  useEffect(() => {
+    const loadAllArticles = async () => {
+      setIsLoading(true);
+      const loadedArticles = await loadArticles();
+      setArticles(loadedArticles);
+      setIsLoading(false);
+    };
+    loadAllArticles();
+  }, []);
 
   const categoryArticles = selectedCategory
     ? articles.filter(a => a.category === selectedCategory).slice(0, 20)
@@ -18,6 +29,14 @@ const TopicsPage = () => {
   const getCategoryCount = (category: string) => {
     return articles.filter(a => a.category === category).length;
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">

@@ -7,6 +7,7 @@ import { ContextLens } from "./ContextLens";
 import { Article, getHeadline, getSummary } from "@/lib/articles";
 import { getCardColor } from "@/lib/cardColors";
 import { ArrowRight, Building2, User, Calendar, MapPin, Layers, Lightbulb, Radio, Clock, Network, Eye, FileText, MessageSquare, BarChart3, Award } from "lucide-react";
+import { memo } from "react";
 
 interface ArticleCardProps {
   article: Article;
@@ -16,7 +17,7 @@ interface ArticleCardProps {
   onViewCluster?: () => void;
 }
 
-export const ArticleCard = ({ article, index, onReadMore, onDeepDive, onViewCluster }: ArticleCardProps) => {
+export const ArticleCard = memo(({ article, index, onReadMore, onDeepDive, onViewCluster }: ArticleCardProps) => {
   const headline = getHeadline(article.content);
   const summary = getSummary(article.content);
   const bgColor = getCardColor(index);
@@ -232,4 +233,4 @@ export const ArticleCard = ({ article, index, onReadMore, onDeepDive, onViewClus
       </CardFooter>
     </Card>
   );
-};
+});

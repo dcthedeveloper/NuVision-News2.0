@@ -1,6 +1,7 @@
 import { Trophy, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { memo } from "react";
 
 interface DailyBriefScoreProps {
   noveltyScore: number;
@@ -8,7 +9,7 @@ interface DailyBriefScoreProps {
   totalArticles: number;
 }
 
-export const DailyBriefScore = ({ noveltyScore, diversityScore, totalArticles }: DailyBriefScoreProps) => {
+export const DailyBriefScore = memo(({ noveltyScore, diversityScore, totalArticles }: DailyBriefScoreProps) => {
   const overallScore = Math.round((noveltyScore + diversityScore) / 2);
   
   const getScoreColor = (score: number) => {
@@ -74,4 +75,4 @@ export const DailyBriefScore = ({ noveltyScore, diversityScore, totalArticles }:
       </CardContent>
     </Card>
   );
-};
+});

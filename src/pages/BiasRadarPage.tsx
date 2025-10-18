@@ -1,15 +1,34 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { loadArticles } from "@/lib/articles";
+import { loadArticles, Article } from "@/lib/articles";
 import { analyzeBias, getBiasColor, getBiasLabel, BiasRadarData } from "@/lib/biasAnalysis";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 const BiasRadarPage = () => {
-  const articles = loadArticles().filter(a => a.deep_dive_format === "Bias Radar").slice(0, 50);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const biasData: BiasRadarData = useMemo(() => analyzeBias(articles), [articles]);
+
+  useEffect(() => {
+    const loadAllArticles = async () => {
+      setIsLoading(true);
+      const loadedArticles = await loadArticles();
+      setArticles(loadedArticles.filter(a => a.deep_dive_format === "Bias Radar").slice(0, 50));
+      setIsLoading(false);
+    };
+    loadAllArticles();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
