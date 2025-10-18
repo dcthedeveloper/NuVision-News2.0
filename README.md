@@ -1,10 +1,10 @@
 # NuVision News 2.0
 ## NewsBot Intelligence System - Advanced NLP Integration Platform
 
-[![CI](https://github.com/dcthedeveloper/NuVision-News2.0/actions/workflows/ci.yml/badge.svg)](https://github.com/dcthedeveloper/NuVision-News2.0/actions/workflows/ci.yml)
+[![CI](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml/badge.svg)](https://github.com/deewcee/NuVision-News/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/dcthedeveloper/NuVision-News2.0?style=social)](https://github.com/dcthedeveloper/NuVision-News2.0/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/dcthedeveloper/NuVision-News2.0/main)](https://github.com/dcthedeveloper/NuVision-News2.0/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/deewcee/NuVision-News?style=social)](https://github.com/deewcee/NuVision-News/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/deewcee/NuVision-News/main)](https://github.com/deewcee/NuVision-News/commits/main)
 
 **ITAI 2373 Final Project**  
 **Developer:** DeMarcus Crump  
