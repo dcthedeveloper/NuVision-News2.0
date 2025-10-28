@@ -138,19 +138,25 @@ jupyter notebook
 
 ## 🔗 Relationship to Final Project
 
-This midterm work serves as the foundation for the **Final Project** (full web application). The data processing pipeline developed here:
+This midterm work serves as the **foundation** for the **Final Project: NuVision News** (full web application). The data processing pipeline developed here:
 
-1. Generates the `nuvision_2k.json` dataset
-2. Establishes NLP analysis patterns
-3. Validates feature extraction approaches
-4. Provides baseline performance metrics
+1. **Generates the `nuvision_2k.json` dataset** - This file contains 2000+ preprocessed articles that power the NuVision News web app
+2. **Establishes NLP analysis patterns** - The techniques proven here (TF-IDF, sentiment, NER, topic modeling) are enhanced in the web app
+3. **Validates feature extraction approaches** - Confirms which features work best for news analysis
+4. **Provides baseline performance metrics** - Classification accuracy, sentiment scores, etc. that the final project builds upon
 
-The **Final Project** (located in `ITAI2373-NewsBot-Final/`) builds upon this work by:
-- Creating a React/TypeScript web interface
-- Adding real-time AI features (summarization, clustering)
-- Implementing advanced visualizations
-- Providing interactive user experience
-- Deploying as a production-ready application
+### From Notebook to NuVision News
+
+The **Final Project** (located in `ITAI2373-NewsBot-Final/`) evolved this Python notebook into **NuVision News**, a complete web application:
+
+- ✅ **Uses this notebook's dataset:** The `nuvision_2k.json` file generated here powers the web app
+- ✅ **Enhances the NLP pipeline:** Adds AI summarization (BART), semantic clustering, knowledge graphs
+- ✅ **Creates a React/TypeScript web interface:** Professional, interactive user experience
+- ✅ **Adds real-time features:** Live news fetching, conversational queries, bias detection
+- ✅ **Implements all 4 required modules:** Advanced content analysis, language generation, multilingual support, conversational interface
+- ✅ **Becomes production-ready:** Complete with caching, error handling, responsive design
+
+**In short:** This notebook proved the NLP techniques work. NuVision News brings them to life as a real application.
 
 ---
 
