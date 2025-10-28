@@ -8,7 +8,39 @@
 [![GitHub stars](https://img.shields.io/github/stars/deewcee/NuVision-News?style=social)](https://github.com/deewcee/NuVision-News/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/deewcee/NuVision-News/main)](https://github.com/deewcee/NuVision-News/commits/main)
 
-**Developer:** DeMarcus Crump | **Repository:** [github.com/deewcee/NuVision-News](https://github.com/deewcee/NuVision-News)
+**ITAI 2373 Final Project - Houston City College**  
+**Team Members:** DeMarcus Crump, Yoana Cook, Chloe Tu  
+**Repository:** [github.com/dcthedeveloper/NuVision-News2.0](https://github.com/dcthedeveloper/NuVision-News2.0)
+
+---
+
+## 🎓 Academic Project Structure
+
+This repository contains both **Midterm** and **Final** project deliverables:
+
+### 📊 Midterm Project (Python/Jupyter NLP Pipeline)
+**Location:** [`notebooks/01_Data_Processing_and_Analysis.ipynb`](notebooks/01_Data_Processing_and_Analysis.ipynb)
+
+**What it includes:**
+- Data collection from NewsAPI
+- Text preprocessing and cleaning
+- TF-IDF analysis and keyword extraction
+- Sentiment analysis (VADER)
+- Named Entity Recognition (NER)
+- Topic modeling
+- Text classification
+- Data visualizations
+- Generated dataset: `src/data/nuvision_2k.json` (2000+ processed articles)
+
+### 🚀 Final Project (Full-Stack Web Application)
+**Location:** Entire repository (web application + enhanced features)
+
+**What it includes:**
+- ✅ **Module A: Advanced Content Analysis Engine** - Enhanced classification, topic modeling, sentiment evolution
+- ✅ **Module B: Language Understanding & Generation** - AI summaries, semantic search, content enhancement
+- ✅ **Module C: Multilingual Intelligence** - Cross-language support (future enhancement)
+- ✅ **Module D: Conversational Interface** - Natural language queries and interactive exploration
+- ✅ **Bonus: Web Application Frontend** (+30 bonus points) - Professional React/TypeScript interface
 
 ---
 

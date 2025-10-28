@@ -1,7 +1,11 @@
 # NuVision News - Executive Summary
 **ITAI 2373 Final Project: NewsBot Intelligence System**
 
-**Developer:** DeMarcus Crump  
+**Team Members:**  
+- DeMarcus Crump  
+- Yoana Cook  
+- Chloe Tu  
+
 **Institution:** Houston City College  
 **Course:** ITAI 2373 - Natural Language Processing  
 **Date:** October 2025  
