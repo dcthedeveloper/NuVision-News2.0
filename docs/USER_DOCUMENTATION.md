@@ -14,7 +14,7 @@ Welcome to NuVision News! This guide will help you understand and use all the fe
 6. [Deep Dive Mode: Advanced Analysis](#deep-dive-mode-advanced-analysis)
 7. [Conversational Search](#conversational-search)
 8. [Audio Briefings](#audio-briefings)
-9. [Context Lens: Reading Modes](#context-lens-reading-modes)
+9. [Context Lens: Story Recommendations](#context-lens-story-recommendations)
 10. [Tips & Tricks](#tips--tricks)
 
 ---
@@ -283,55 +283,34 @@ Instead of typing keywords, you can ask questions naturally.
 
 ---
 
-## Context Lens: Reading Modes
+## Context Lens: Story Recommendations
 
 ### What is Context Lens?
 
-Context Lens adapts how articles are presented based on your needs.
+Context Lens is a feature that explains **why each article was recommended to you**. Instead of seeing articles randomly, you can understand the reasoning behind each story's selection.
 
-**Three Reading Modes:**
+**How to use it:**
+1. Look for the small **info icon (ⓘ)** on each article card
+2. Click it to open the "Why This Story?" dialog
+3. See factors like:
+   - **Breaking News** - How recent the story is
+   - **Multiple Perspectives** - If multiple sources are covering it
+   - **Category Match** - Relevance to your interests
+   - **Verified Source** - Publisher credibility
+   - **Recency** - When it was published
 
-### 1. Student Mode
-**Best for:**
-- Learning about new topics
-- Understanding complex issues
-- Educational purposes
+**Why this matters:**
+- Understand why you're seeing certain news
+- Build trust in the feed algorithm
+- Learn about source diversity and coverage patterns
+- Make informed decisions about what to read
 
-**What changes:**
-- Simpler language explanations
-- Background context provided
-- Key terms defined
-- Slower, educational pace
-
-### 2. Analyst Mode
-**Best for:**
-- Professionals researching topics
-- In-depth analysis needs
-- Fact-checking and verification
-
-**What changes:**
-- Detailed analysis and data
-- Source credibility information
-- Cross-references and citations
-- Critical examination of claims
-
-### 3. Executive Mode
-**Best for:**
-- Busy professionals
-- Quick decision-making
-- High-level overviews
-
-**What changes:**
-- Ultra-brief summaries
-- Key takeaways highlighted
-- Action items emphasized
-- Minimal details, maximum insight
-
-**How to switch modes:**
-1. Look for the **Context Lens** button
-2. Select your preferred mode
-3. Content automatically adjusts
-4. Switch anytime based on your needs
+**Example:**
+You click the info icon on an article and see:
+- ⚡ Breaking News - Published 3h ago
+- 👥 Multiple Perspectives - 5 sources covering this story
+- ✅ Category Match - Matches your TECHNOLOGY interests
+- 📅 Today's News - Part of today's briefing
 
 ---
 
@@ -343,7 +322,7 @@ Context Lens adapts how articles are presented based on your needs.
 1. **Start with Topics** - See grouped stories for quick overview
 2. **Check Bias Radar weekly** - Monitor your news diet balance
 3. **Use Clean Reader** - For focused, distraction-free reading
-4. **Try different Context Lens modes** - Match your current need
+4. **Check Context Lens** - Understand why stories were recommended
 
 **Smart Reading:**
 - ✅ Read summaries first, then full articles if interested
@@ -545,16 +524,16 @@ A: Click the share button on any article to copy the link.
 ### How Different People Use NuVision News
 
 **Sarah (College Student):**
-- Uses **Student Mode** for class research
-- Reads multiple perspectives on political topics
+- Reads multiple perspectives on political topics for essays
 - Uses **Knowledge Maps** to understand complex issues
 - Checks sources with **Bias Radar**
+- Uses **Context Lens** to understand story selection
 
 **Michael (Business Executive):**
 - Listens to **Audio Briefings** during morning commute
-- Uses **Executive Mode** for quick updates
-- Monitors **Topics** for industry news
-- Scans summaries, reads full articles only when critical
+- Scans **AI summaries** for quick updates on industry news
+- Monitors **Topics** for business-related coverage
+- Reads full articles only when critical
 
 **Jennifer (Retired Teacher):**
 - Reads in **Clean Reader Mode** for easier viewing
@@ -563,10 +542,10 @@ A: Click the share button on any article to copy the link.
 - Appreciates the educational approach
 
 **Alex (Data Analyst):**
-- Uses **Analyst Mode** for detailed information
-- Leverages **Deep Dive** tools for research
-- Monitors sentiment trends
-- Exports data for further analysis
+- Uses **Deep Dive** tools for research
+- Leverages **Knowledge Graphs** for entity analysis
+- Monitors sentiment trends with **Bias Radar**
+- Compares coverage across multiple sources
 
 ---
 
@@ -602,7 +581,7 @@ Ready to start? Follow these steps:
 - [ ] Check out Bias Radar to see source diversity
 - [ ] Try Deep Dive mode on a complex story
 - [ ] Listen to an Audio Briefing
-- [ ] Experiment with different Context Lens modes
+- [ ] Check Context Lens (info icon) to see why stories were recommended
 - [ ] Use conversational search to ask a question
 
 **Congratulations!** You're now ready to get the most out of NuVision News!

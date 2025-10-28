@@ -26,7 +26,7 @@
 - 📊 **Bias Radar** — Visualizes media bias and source diversity
 - 🗺️ **Knowledge Graphs** — Entity relationships and connections
 - ⏱️ **Event Timelines** — Chronological event extraction
-- 🎯 **Context Lenses** — Tailored views for different reader personas (student, analyst, executive)
+- 🎯 **Context Lens** — Explains why each story was recommended to you
 - 📰 **Clean Reader** — Distraction-free reading with entity highlighting
 
 **Tech Stack**: React 18 + TypeScript, Vite, TailwindCSS, shadcn/ui, Hugging Face Transformers, Node.js inference proxy
@@ -108,10 +108,13 @@ Now clustering, AI summaries, and advanced NER will be enabled.
 
 ## Documentation
 
-- 📘 **[DEMO_QUICKSTART.md](DEMO_QUICKSTART.md)** — 60-second setup guide
-- 📗 **[TECHNICAL_DOCUMENTATION.md](TECHNICAL_DOCUMENTATION.md)** — Architecture, algorithms, API reference
-- 📙 **[CONTRIBUTING.md](CONTRIBUTING.md)** — Contribution guidelines
-- 📕 **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** — One-page cheat sheet
+- 📘 **[TECHNICAL_DOCUMENTATION.md](TECHNICAL_DOCUMENTATION.md)** — Complete technical reference (architecture, algorithms, API)
+- 📗 **[docs/EXECUTIVE_SUMMARY.md](docs/EXECUTIVE_SUMMARY.md)** — Project overview and business value
+- 📙 **[docs/USER_GUIDE.md](docs/USER_GUIDE.md)** — Feature tutorials and how-to guides
+- � **[docs/USER_DOCUMENTATION.md](docs/USER_DOCUMENTATION.md)** — Non-technical user guide
+- � **[docs/API_REFERENCE.md](docs/API_REFERENCE.md)** — Complete API documentation
+- 📓 **[docs/REFLECTIVE_JOURNAL.md](docs/REFLECTIVE_JOURNAL.md)** — Development journey and learning
+- 📔 **[notebooks/](notebooks/)** — Python/Jupyter data processing pipeline
 
 ---
 
@@ -121,7 +124,6 @@ Now clustering, AI summaries, and advanced NER will be enabled.
 
 - Never commit `.env` or `server/.env` files to git (they're in `.gitignore`)
 - Use `.env.example` and `server/.env.example` as templates only
-- See `DEMO_READINESS_REPORT.md` for security checklist
 
 ---
 

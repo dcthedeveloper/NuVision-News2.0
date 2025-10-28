@@ -2,6 +2,7 @@
 **ITAI 2373 Final Project: NewsBot Intelligence System**
 
 **Developer:** DeMarcus Crump  
+**Institution:** Houston City College  
 **Course:** ITAI 2373 - Natural Language Processing  
 **Date:** October 2025  
 **Project Type:** Advanced NLP Integration and Analysis Platform
@@ -31,7 +32,7 @@ NuVision News leverages advanced NLP and AI to provide:
 - **Bias Detection & Analysis**: Visualizes source diversity and political leanings across coverage
 - **Knowledge Graph Extraction**: Maps relationships between people, organizations, locations, and events
 - **Event Timeline Construction**: Chronologically organizes developments in complex, evolving stories
-- **Context Lenses**: Provides persona-based views (student, analyst, executive) tailored to different user needs
+- **Context Lens**: Explains why each story was selected for your feed (recency, source diversity, relevance)
 - **Conversational Query Interface**: Natural language interaction for exploration and analysis
 
 ### Business Value & ROI
