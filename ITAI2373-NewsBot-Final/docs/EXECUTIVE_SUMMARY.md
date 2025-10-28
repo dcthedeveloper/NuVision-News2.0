@@ -401,10 +401,10 @@ This project serves as a demonstration of applied NLP engineering with a focus o
 
 ---
 
-**Developer:** DeMarcus Crump  
-**Email:** [Your Email]  
-**GitHub:** https://github.com/deewcee  
-**Project Repository:** https://github.com/deewcee/NuVision-News  
+**Team Name:** TeamNuVision  
+**Team Members:** DeMarcus Crump, Yoana Cook, Chloe Tu  
+**Institution:** Houston City College  
+**Project Repository:** https://github.com/dcthedeveloper/NuVision-News2.0  
 **Live Demo:** http://localhost:8080 (development)
 
 ---

@@ -23,13 +23,13 @@ This project was developed collaboratively by three team members, with responsib
 ### Technical Implementation (Team Effort)
 
 **Frontend Development (Collaborative):**
-- **DeMarcus Crump:** Led React 18 + TypeScript architecture design, implemented core routing and state management
+- **DeMarcus Crump:** Worked on React 18 + TypeScript architecture design, implemented core routing and state management
 - **Yoana Cook:** Designed UI/UX components using shadcn/ui, created responsive layouts with Tailwind CSS
 - **Chloe Tu:** Developed complex data visualization components, implemented React Query hooks and caching strategies
 - **Team Result:** 15+ reusable components, 8 main pages, professional responsive design
 
 **Backend Development (Collaborative):**
-- **Chloe Tu:** Led Node.js + Express server architecture, implemented file-backed caching system with 7-day TTL
+- **Chloe Tu:** Worked on Node.js + Express server architecture, implemented file-backed caching system with 7-day TTL
 - **DeMarcus Crump:** Integrated Hugging Face Inference API endpoints, developed error handling middleware
 - **Yoana Cook:** Built rate limiting logic, created admin endpoints for cache management
 - **Team Result:** Robust inference proxy server with intelligent caching and cost optimization
@@ -53,9 +53,9 @@ This project was developed collaboratively by three team members, with responsib
 ### Documentation (Team Effort)
 
 **Created comprehensive documentation collaboratively:**
-- **DeMarcus Crump:** Led TECHNICAL_DOCUMENTATION.md (1726 lines) and API_REFERENCE.md (700+ lines)
-- **Yoana Cook:** Led USER_GUIDE.md (500+ lines) and USER_DOCUMENTATION.md with tutorials and examples
-- **Chloe Tu:** Led EXECUTIVE_SUMMARY.md (400+ lines) and README.md project overview (155 lines)
+- **DeMarcus Crump:** Contributed to TECHNICAL_DOCUMENTATION.md (1726 lines) and API_REFERENCE.md (700+ lines)
+- **Yoana Cook:** Contributed to USER_GUIDE.md (500+ lines) and USER_DOCUMENTATION.md with tutorials and examples
+- **Chloe Tu:** Contributed to EXECUTIVE_SUMMARY.md (400+ lines) and README.md project overview (155 lines)
 - **Team Collaboration:** All members reviewed and contributed to all documentation files
 
 **Estimated Time Investment:** 240+ hours total (80 hours per team member)
@@ -123,7 +123,7 @@ Through this challenge, we learned to think critically about architecture decisi
 Hugging Face Inference API has rate limits (30 req/min free tier) and costs money beyond free tier. Initial implementation made redundant API calls, exceeding limits quickly during testing.
 
 **Team Solution:**  
-- **Chloe:** Led implementation of file-backed caching with 7-day TTL
+- **Chloe:** Implemented file-backed caching with 7-day TTL
 - **DeMarcus:** Added request deduplication to prevent simultaneous identical requests
 - **Yoana:** Created localStorage caching on client side with UI indicators
 - **Team Collaboration:** Built cache invalidation strategies together
@@ -410,11 +410,12 @@ All team members gained hands-on experience with:
 - Experimental design
 - Results visualization and communication
 
-**Technical Lead:**
-- System architecture design
+**System Design & Architecture (Team Skills):**
+- Collaborative system architecture design
 - Trade-off analysis (performance vs. cost)
 - Documentation and knowledge sharing
 - Code quality and maintainability
+- Team code reviews and best practices
 
 ---
 
@@ -509,7 +510,7 @@ This project serves as a comprehensive portfolio piece for all team members demo
 - System architecture and design skills
 - Professional documentation standards
 - Problem-solving and optimization abilities
-- **Team collaboration and leadership experience**
+- **Team collaboration and peer programming experience**
 
 We're proud of what we've built as a team and excited to leverage these skills in our careers in AI and Natural Language Processing.
 

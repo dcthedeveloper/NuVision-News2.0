@@ -443,9 +443,8 @@ A: Yes, this is an open-source academic project. Free for personal and education
 - Describe use case and expected behavior
 
 **Contact:**
-- Developer: DeMarcus Crump
-- Email: [Your Email]
-- GitHub: https://github.com/deewcee
+- Team: TeamNuVision (DeMarcus Crump, Yoana Cook, Chloe Tu)
+- Repository: https://github.com/dcthedeveloper/NuVision-News2.0
 
 ---
 

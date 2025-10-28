@@ -591,9 +591,9 @@ Ready to start? Follow these steps:
 ## Contact & Support
 
 **Questions or Feedback?**
-- GitHub: https://github.com/deewcee/NuVision-News
-- Developer: DeMarcus Crump
-- Email: [Your Email]
+- Repository: https://github.com/dcthedeveloper/NuVision-News2.0
+- Team: TeamNuVision (DeMarcus Crump, Yoana Cook, Chloe Tu)
+- Institution: Houston City College
 
 **Documentation:**
 - Technical Guide: `TECHNICAL_DOCUMENTATION.md`
@@ -602,6 +602,6 @@ Ready to start? Follow these steps:
 
 ---
 
-*Last Updated: October 18, 2025*  
+*Last Updated: October 28, 2025*  
 *Version: 1.0*  
 *NuVision News - Smarter News Reading for Everyone*
