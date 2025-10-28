@@ -22,7 +22,7 @@ This repository contains both **Midterm** and **Final** project deliverables for
 **Location:** [`ITAI2373-NewsBot-Midterm/`](ITAI2373-NewsBot-Midterm/)
 
 **What it includes:**
-- Data collection from NewsAPI (2000+ articles)
+- Data collection from Kaggle (HuffPost News Category Dataset)
 - Text preprocessing and cleaning
 - TF-IDF analysis and keyword extraction
 - Sentiment analysis (VADER)

@@ -14,7 +14,7 @@
 
 This folder contains the **Midterm Project** deliverable for ITAI 2373. The project implements a complete NLP pipeline for news article analysis using Python and Jupyter notebooks.
 
-### What's Included
+**What's Included
 
 1. **Jupyter Notebook:** `notebooks/01_Data_Processing_and_Analysis.ipynb`
    - Complete, runnable notebook with all analyses
@@ -31,7 +31,7 @@ This folder contains the **Midterm Project** deliverable for ITAI 2373. The proj
 ## 🎯 Project Objectives
 
 This midterm project demonstrates:
-- Data collection from NewsAPI
+- Data collection from Kaggle (HuffPost News Category Dataset)
 - Text preprocessing and cleaning
 - Feature extraction using TF-IDF
 - Sentiment analysis with VADER
@@ -72,7 +72,7 @@ jupyter notebook
 ## 📊 Key Features Implemented
 
 ### Module 1: Data Collection & Preprocessing
-- NewsAPI integration for article fetching
+- Kaggle dataset integration (HuffPost News Category Dataset)
 - Text cleaning and normalization
 - Tokenization and stopword removal
 - Stemming and lemmatization
@@ -192,10 +192,10 @@ The **Final Project** (located in `ITAI2373-NewsBot-Final/`) evolved this Python
 - `nltk` - Natural language toolkit
 - `scikit-learn` - Machine learning
 - `matplotlib`, `seaborn` - Visualization
-- `requests` - API integration
+- `kaggle` - Dataset download API
 
 **Data Source:**
-- NewsAPI (https://newsapi.org)
+- Kaggle: HuffPost News Category Dataset (https://www.kaggle.com/datasets/rmisra/news-category-dataset)
 
 ---
 
