@@ -8,29 +8,31 @@ This folder contains Jupyter notebooks used for data processing, NLP analysis, a
 
 ### 01_Data_Processing_and_Analysis.ipynb
 
-**Purpose:** Data collection, preprocessing, and NLP analysis pipeline
+**Purpose:** Data collection, preprocessing, and NLP analysis pipeline for the midterm project
 
 **What it does:**
-- Fetches news articles from NewsAPI
+- Fetches news articles from Kaggle (HuffPost News Category Dataset)
 - Performs text preprocessing (tokenization, cleaning, normalization)
 - Applies NLP techniques:
   - TF-IDF analysis for keyword extraction
-  - Sentiment analysis using VADER
-  - Named Entity Recognition (NER)
-  - Topic modeling
-  - Text classification
+  - Sentiment analysis using VADER and TextBlob
+  - Named Entity Recognition (NER) with spaCy
+  - Topic modeling with LDA
+  - Text classification (Logistic Regression, Naive Bayes, Linear SVM)
 - Generates visualizations (word clouds, sentiment distributions, category analysis)
 - Exports processed data to JSON format
 
 **Output:** 
-- `src/data/nuvision_2k.json` - 2000+ preprocessed articles with NLP features
+- `nuvision_2k.json` - 2000+ preprocessed articles with NLP features
+- This JSON file becomes the data source for the NuVision News web application
 
 **Technologies:**
-- Python 3.x
+- Python 3.10+
 - pandas, numpy
-- nltk, scikit-learn
-- matplotlib, seaborn
-- NewsAPI
+- nltk, spaCy, scikit-learn
+- matplotlib, seaborn, WordCloud
+- textblob, vaderSentiment
+- Kaggle API
 
 ---
 
@@ -38,9 +40,10 @@ This folder contains Jupyter notebooks used for data processing, NLP analysis, a
 
 ### Option 1: Google Colab (Recommended)
 1. Upload notebook to Google Colab
-2. Run all cells sequentially
-3. Download generated JSON file
-4. Place in `src/data/` folder
+2. Upload your `kaggle.json` API key when prompted
+3. Run all cells sequentially
+4. The notebook will download the HuffPost dataset from Kaggle
+5. Generated `nuvision_2k.json` file will be created
 
 ### Option 2: Local Jupyter
 ```bash
@@ -48,10 +51,16 @@ This folder contains Jupyter notebooks used for data processing, NLP analysis, a
 pip install jupyter notebook
 
 # Install dependencies
-pip install pandas numpy nltk scikit-learn matplotlib seaborn requests
+pip install pandas numpy nltk spacy scikit-learn matplotlib seaborn textblob vaderSentiment wordcloud kaggle
+
+# Download spaCy model
+python -m spacy download en_core_web_sm
+
+# Set up Kaggle API (place kaggle.json in ~/.kaggle/)
+# Get your API key from https://www.kaggle.com/settings
 
 # Run notebook
-jupyter notebook notebooks/01_Data_Processing_and_Analysis.ipynb
+jupyter notebook 01_Data_Processing_and_Analysis.ipynb
 ```
 
 ---
@@ -59,26 +68,26 @@ jupyter notebook notebooks/01_Data_Processing_and_Analysis.ipynb
 ## Data Pipeline
 
 ```
-NewsAPI 
+Kaggle HuffPost Dataset
    ↓
-Fetch Articles (Python)
+Download via Kaggle API (Python)
    ↓
-Text Preprocessing (nltk)
+Text Preprocessing (nltk, spaCy)
    ↓
-NLP Analysis (TF-IDF, Sentiment, NER)
+NLP Analysis (TF-IDF, Sentiment, NER, Classification)
    ↓
 Export to JSON (nuvision_2k.json)
    ↓
-Import to React App (TypeScript)
+Used by NuVision News Web Application
    ↓
-Web Application Display
+Web Application Display (React/TypeScript)
 ```
 
 ---
 
-## Integration with Web App
+## Integration with NuVision News Web App
 
-The notebook generates structured data that the React/TypeScript application consumes:
+The midterm notebook generates the foundation dataset that the Final Project (NuVision News) uses:
 
 **Data Structure:**
 ```json
@@ -91,27 +100,17 @@ The notebook generates structured data that the React/TypeScript application con
     "polarity": 0.5,
     "compound": 0.7231
   },
-  "source": "Source Name",
+  "source": "HuffPost",
   "publishedAt": "2025-10-18T12:00:00Z"
 }
 ```
 
 **Used by:**
-- `src/data/nuvision_2k.json` - Static article dataset
+- NuVision News web application (`ITAI2373-NewsBot-Final/`)
 - React components for display and filtering
 - Client-side NLP features (additional analysis)
 - AI features (clustering, summarization) via server API
 
 ---
 
-## Future Notebooks
-
-Planned notebooks for final project enhancements:
-- `02_Topic_Modeling.ipynb` - Advanced LDA/NMF topic discovery
-- `03_Clustering_Analysis.ipynb` - Article clustering techniques
-- `04_Multilingual_Processing.ipynb` - Cross-language analysis
-- `05_Model_Evaluation.ipynb` - Performance metrics and validation
-
----
-
-*These notebooks demonstrate the Python/NLP work that powers the TypeScript/React web application.*
+*This midterm notebook demonstrates the Python/NLP analysis that evolved into the NuVision News web application.*
