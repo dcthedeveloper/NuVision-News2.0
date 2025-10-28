@@ -5,8 +5,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![GitHub stars](https://img.shields.io/github/stars/deewcee/NuVision-News?style=social)](https://github.com/deewcee/NuVision-News/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/deewcee/NuVision-News/main)](https://github.com/deewcee/NuVision-News/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/dcthedeveloper/NuVision-News2.0?style=social)](https://github.com/dcthedeveloper/NuVision-News2.0/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/dcthedeveloper/NuVision-News2.0/main)](https://github.com/dcthedeveloper/NuVision-News2.0/commits/main)
 
 **ITAI 2373 Final Project - Houston City College**  
 **Team Members:** DeMarcus Crump, Yoana Cook, Chloe Tu  
@@ -111,13 +111,14 @@ The app is **fully functional as a demo** using pre-loaded sample data (`src/dat
 ## Quick Start (60 seconds)
 
 ```bash
-# Clone and install
-git clone https://github.com/deewcee/NuVision-News.git
-cd NuVision-News
-npm install
+**Quick Start:**
 
-# Start the demo (no APIs needed)
+```bash
+git clone https://github.com/dcthedeveloper/NuVision-News2.0.git
+cd NuVision-News2.0
+npm install
 npm run dev
+```
 ```
 
 Open http://localhost:8080 (or whichever port Vite assigns) in your browser. **Done!**
@@ -230,9 +231,10 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 ## Contact & Support
 
-**Developer:** DeMarcus Crump  
-**GitHub:** https://github.com/deewcee  
-**Repository:** https://github.com/deewcee/NuVision-News  
-**Issues/Feedback:** https://github.com/deewcee/NuVision-News/issues
+**Team Name:** TeamNuVision  
+**Team Members:** DeMarcus Crump, Yoana Cook, Chloe Tu  
+**Institution:** Houston City College  
+**Repository:** https://github.com/dcthedeveloper/NuVision-News2.0  
+**Issues/Feedback:** https://github.com/dcthedeveloper/NuVision-News2.0/issues
 
 This project demonstrates practical NLP techniques including text preprocessing, feature extraction, classification, sentiment analysis, named entity recognition, topic modeling, and language model integration—all applied to real-world news analysis.

@@ -397,7 +397,7 @@ This project serves as a demonstration of applied NLP engineering with a focus o
 - Hugging Face Inference API: https://huggingface.co/inference-api
 
 **Code Repository:**
-- GitHub: https://github.com/deewcee/NuVision-News
+- GitHub: https://github.com/dcthedeveloper/NuVision-News2.0
 
 ---
 

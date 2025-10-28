@@ -812,4 +812,4 @@ RATE_LIMIT_MAX=30  # Requests per window
 
 *Last Updated: October 2025*  
 *API Version: 1.0*  
-*For support: https://github.com/deewcee/NuVision-News/issues*
+*For support: https://github.com/dcthedeveloper/NuVision-News2.0/issues*

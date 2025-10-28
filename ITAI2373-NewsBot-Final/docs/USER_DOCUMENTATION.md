@@ -375,7 +375,7 @@ A: Click the share button on any article to copy the link.
 4. Check your internet connection
 
 **For Technical Issues:**
-- Visit the GitHub repository: https://github.com/deewcee/NuVision-News
+- Visit the GitHub repository: https://github.com/dcthedeveloper/NuVision-News2.0
 - Report issues in the "Issues" tab
 - Check existing documentation in the `docs/` folder
 
