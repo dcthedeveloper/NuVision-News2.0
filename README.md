@@ -16,31 +16,44 @@
 
 ## 🎓 Academic Project Structure
 
-This repository contains both **Midterm** and **Final** project deliverables:
+This repository contains both **Midterm** and **Final** project deliverables for ITAI 2373:
 
 ### 📊 Midterm Project (Python/Jupyter NLP Pipeline)
-**Location:** [`notebooks/01_Data_Processing_and_Analysis.ipynb`](notebooks/01_Data_Processing_and_Analysis.ipynb)
+**Location:** [`ITAI2373-NewsBot-Midterm/`](ITAI2373-NewsBot-Midterm/)
 
 **What it includes:**
-- Data collection from NewsAPI
+- Data collection from NewsAPI (2000+ articles)
 - Text preprocessing and cleaning
 - TF-IDF analysis and keyword extraction
 - Sentiment analysis (VADER)
 - Named Entity Recognition (NER)
-- Topic modeling
-- Text classification
+- Topic modeling (LDA)
+- Text classification (Logistic Regression)
 - Data visualizations
-- Generated dataset: `src/data/nuvision_2k.json` (2000+ processed articles)
+- **Output:** `nuvision_2k.json` dataset used by Final project
+
+**See:** [`ITAI2373-NewsBot-Midterm/README.md`](ITAI2373-NewsBot-Midterm/README.md) for complete details.
 
 ### 🚀 Final Project (Full-Stack Web Application)
-**Location:** Entire repository (web application + enhanced features)
+**Location:** [`ITAI2373-NewsBot-Final/`](ITAI2373-NewsBot-Final/)
 
 **What it includes:**
 - ✅ **Module A: Advanced Content Analysis Engine** - Enhanced classification, topic modeling, sentiment evolution
-- ✅ **Module B: Language Understanding & Generation** - AI summaries, semantic search, content enhancement
-- ✅ **Module C: Multilingual Intelligence** - Cross-language support (future enhancement)
+- ✅ **Module B: Language Understanding & Generation** - AI summaries (BART), semantic search, content enhancement
+- ✅ **Module C: Multilingual Intelligence** - Framework ready for translation and cross-language support
 - ✅ **Module D: Conversational Interface** - Natural language queries and interactive exploration
 - ✅ **Bonus: Web Application Frontend** (+30 bonus points) - Professional React/TypeScript interface
+
+**See:** [`ITAI2373-NewsBot-Final/README.md`](ITAI2373-NewsBot-Final/README.md) for complete details.
+
+---
+
+## 📋 Quick Navigation
+
+- **Midterm Project:** Go to [`ITAI2373-NewsBot-Midterm/`](ITAI2373-NewsBot-Midterm/)
+- **Final Project:** Go to [`ITAI2373-NewsBot-Final/`](ITAI2373-NewsBot-Final/)
+- **Submission Guide:** See [`SUBMISSION_GUIDE.md`](SUBMISSION_GUIDE.md) for checklist
+- **Documentation:** See [`docs/`](docs/) folder for all supporting documents
 
 ---
 
